@@ -1,13 +1,13 @@
 from pathlib import Path
 import shutil
-
+import sys
 
 target_dir = Path(input("Input a directory path: "))
 if target_dir.exists():                                 #Check the path validation
 
     if len(list(target_dir.iterdir())) == 0:
         input("The directory is empty. Press enter to exit.")
-        exit()
+        sys.exit()
 
 
     for file in target_dir.iterdir():
@@ -21,11 +21,10 @@ if target_dir.exists():                                 #Check the path validati
 
     print("Done.")
     input("Press enter to exit.")
-
+    sys.exit()
 
 
 else:
     print("The path is not valid. Please enter a valid path.")
     input("Press enter to exit.")
-    exit()
-
+    sys.exit()
